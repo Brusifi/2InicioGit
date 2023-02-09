@@ -87,3 +87,8 @@ const playMusic = () => {
     playBtn.classList.remove('pause')
     disk.classList.add('play')
 }
+
+seekBar.addEventListener('input', () => {
+    music.currentTime = seekBar.value
+    playMusic()
+})
