@@ -14,7 +14,7 @@ body {
 
 .music-player {
     width: 350px;
-    height: 580px;
+    height: 575px;
     background-color: rgba(0, 174, 255, 0.945);
     border-radius: 20px;
     box-shadow: 0 40px 100px rgba(255, 255, 255, 0.1);
@@ -37,7 +37,7 @@ h1 {
 .music-name {
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
 }
 
 .artist-name {
@@ -47,7 +47,7 @@ h1 {
 .disk {
     position: relative;
     display: block;
-    margin: 40px auto;
+    margin: 30px auto;
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -109,7 +109,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .play-btn {
@@ -133,5 +133,59 @@ h1 {
     background-color: rgb(19, 92, 92);
     transition: 0.5s;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
 }
+
+.play-btn span:nth-child(2) {
+    left: 55%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translate(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(53, 134, 134);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
